@@ -7,7 +7,7 @@ source("utils.R")
 
 
 ## read data and subset
-dnow <- read.dta("dataforanalysis2.dta")
+dnow <- read.dta("../data/dataforanalysis2.dta")
 dnow <- subset(dnow, country!=4, select=c(caseno, party, nptys, seats, portshare, ptyprop, ppunwtd))
 
 dnow$partyR <- with(dnow, ave(caseno, caseno, FUN=function(x) 1:length(x)))
